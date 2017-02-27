@@ -11,8 +11,8 @@ switch numarExercitiu
         %% Exercitiul 2
         % Setam parametrii
         functie_2 = @(x)x.^3-7.*x.^2+14.*x-6;
-        a = 0;
-        b = 1;
+        a = 3.2;
+        b = 4;
         numarPasi = 100;
 
         % A
