@@ -4,7 +4,7 @@ clear;
 close all;
 
 % Setam parametrii initial
-numarExercitiu = 7;
+numarExercitiu = 3;
 
 switch numarExercitiu
     case 2
