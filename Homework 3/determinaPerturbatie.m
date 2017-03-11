@@ -5,6 +5,6 @@ function [ perturbatie ] = determinaPerturbatie( b, bPerturbat )
 %   perturbatie = perturbatia aplicata matricei initiale
 
     x = bPerturbat - b;
-    perturbatie = x;
+    perturbatie = x./b;
 end
 
