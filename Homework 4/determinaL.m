@@ -20,7 +20,8 @@ function [ L ] = determinaL( A )
         end
         
         L(k,k) = sqrt(A(k,k) - sum(L(k,1:k-1).^2));
-        L(k+1:size(A,1),k) = (1/L(k,k)) .* (A(k+1:size(A,1),k) - sum(L(k+1:size(A,1),1:k-1) .* L(k,1:k-1)));
+        L(k+1:size(A,1),k) = (1/L(k,k)) .* (A(k+1:size(A,1),k) - ...
+            sum(L(k+1:size(A,1),1:k-1) .* L(k,1:k-1)));
     end
 end
 
