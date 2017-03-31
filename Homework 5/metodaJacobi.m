@@ -7,6 +7,10 @@ function [ x, numarIteratii ] = metodaJacobi( A, a, epsilon )
     x = zeros(1,size(A,1));
     x = [x; B .* x(1,:) + a];
     
+    B
+    x(1,:)
+    (B * x(1,:)')'
+    
     if q >= 1
         disp('Metoda Jacobi nu asigura convergenta');
     else

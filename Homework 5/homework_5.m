@@ -1,7 +1,7 @@
 % Adrian ISPAS, 343
 
 clc
-numarExercitiu = 7;
+numarExercitiu = 3;
 
 switch numarExercitiu
     case 1
@@ -23,7 +23,7 @@ switch numarExercitiu
     case 3
         A = [4 2 2; 2 10 4; 2 4 6];
         a = [3; 1; 2];
-        epsilon = 10^(-5);
+        epsilon = 10^(-2);
         sigma = 0.1;
         
         [x, numarIteratii] = metodaJacobiRelaxata(A, a, epsilon, sigma);
