@@ -55,6 +55,9 @@ function [ lambda ] = metodaRotatiilor( A, epsilon )
         x = y;
     end
     
-    lambda = x;
+    lambda = [];
+    for i = 1:size(x,1)
+        lambda = [lambda x(i,i)];
+    end
 end
 
