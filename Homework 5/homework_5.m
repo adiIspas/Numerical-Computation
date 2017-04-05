@@ -1,7 +1,7 @@
 % Adrian ISPAS, 343
 
 clc
-numarExercitiu = 3;
+numarExercitiu = 4;
 
 switch numarExercitiu
     case 1

@@ -2,7 +2,7 @@
 clear
 clc
 
-numarExercitiu = 1;
+numarExercitiu = 4;
 
 switch numarExercitiu
     case 1
@@ -24,18 +24,19 @@ switch numarExercitiu
     case 4
         epsilon = 10^(-10);
  
-        A = zeros(3,3);
-        b = zeros(3,1);
+        n = 20;
+        A = zeros(n,n);
+        b = zeros(n,1);
         
-        for i = 1:3
+        for i = 1:n
             A(i,i) = 2;
             b(i,1) = i;
         end
         
-        for i = 1:2
+        for i = 1:n-1
             A(i,i+1) = 1;
             A(i+1,i) = 1;
         end
 
-        [x, n] = gradientConjugatEroare(A,b,epsilon);
+        [x, N] = gradientConjugatEroare(A,b,epsilon);
 end

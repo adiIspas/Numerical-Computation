@@ -12,7 +12,7 @@ function [ x, numarIteratii ] = metodaJacobiDiagonalaDominantaLinii( A, a, epsil
     x = [x; B .* x(1,:) + b];
     
     for i = 1:size(A,1)
-        if A(i,i) <= (sum(A(i,:)) - A(i,i))
+        if abs(A(i,i)) <= abs(sum(A(i,:)) - A(i,i))
             dominanta = 0;
             break;
         end
