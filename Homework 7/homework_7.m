@@ -17,10 +17,10 @@ switch numarExercitiu
         
         eroare = abs(polinom(x) - functie(x));
 
-        plot(x,functie(x))
+        plot(x,functie(x),'-.r*')
         hold on
-        plot(x,polinom(x))
-        plot(x,eroare)
+        plot(x,polinom(x),'-.g*')
+        plot(x,eroare,'-.b*')
         hold off
     case 3
         functie = @(x)exp(2*x);
