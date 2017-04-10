@@ -2,7 +2,7 @@
 clear
 clc
 
-numarExercitiu = 2;
+numarExercitiu = 3;
 
 switch numarExercitiu
     case 2
