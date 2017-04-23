@@ -11,14 +11,15 @@ switch numarExercitiu
         b = 1;
         n = 4;
         x = 1;
+        pas = 0.1;
         noduri = 10 * (n + 1);
         functie = @(x)exp(2*x);
 
-        resultFunctie = functie(a:0.1:b);
-        resultSpline = zeros(1,size(a:0.1:b,1));
+        resultFunctie = functie(a:pas:b);
+        resultSpline = zeros(1,size(a:pas:b,1));
         
         idx = 1;
-        for i = a:0.1:b
+        for i = a:pas:b
             resultSpline(idx) = splineLine(functie, a, b, n, i);
             idx = idx + 1;
         end
@@ -27,24 +28,25 @@ switch numarExercitiu
         hold on
         plot(resultSpline);
         hold off
+        
     case 2
         a = -1;
         b = 1;
         n = 4;
         x = 1;
-        noduri = 10 * (n + 1);
+        pas = 0.1;
         functie = @(x)exp(2*x);
         functieDerivata = @(x)2*exp(2*x);
         
-        resultFunctie = functie(a:0.1:b);
-        resultSpline = zeros(1,size(a:0.1:b,1));
+        resultFunctie = functie(a:pas:b);
+        resultSpline = zeros(1,size(a:pas:b,1));
         
         idx = 1;
-        for i = a:0.1:b
+        for i = a:pas:b
             resultSpline(idx) = splinePatratic(functie, functieDerivata, a, b, n, i);
             idx = idx + 1;
         end
-        
+       
         plot(resultFunctie);
         hold on
         plot(resultSpline);
@@ -55,15 +57,15 @@ switch numarExercitiu
         b = 1;
         n = 4;
         x = 1;
-        noduri = 10 * (n + 1);
+        pas = 0.1;
         functie = @(x)exp(2*x);
         functieDerivata = @(x)2*exp(2*x);
         
-        resultFunctie = functie(a:0.1:b);
-        resultSpline = zeros(1,size(a:0.1:b,1));
+        resultFunctie = functie(a:pas:b);
+        resultSpline = zeros(1,size(a:pas:b,1));
         
         idx = 1;
-        for i = a:0.1:b
+        for i = a:pas:b
             resultSpline(idx) = splineCubic(functie, functieDerivata, a, b, n, i);
             idx = idx + 1;
         end
