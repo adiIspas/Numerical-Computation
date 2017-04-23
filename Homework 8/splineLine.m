@@ -17,10 +17,10 @@ function [ y ] = splineLine( functie, a, b, n, xValue )
         b(j) = (functie(x(j+1)) - functie(x(j)))/(x(j+1) - x(j));
     end
     
+    y = 0;
     for j = 1:n 
         if (xValue >= x(j)) && (xValue <= x(j+1))
             y = a(j) + b(j) * (xValue - x(j));
-            break;
         end
     end
 end
