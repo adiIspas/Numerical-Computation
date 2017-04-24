@@ -12,7 +12,7 @@ switch numarExercitiu
         n = 4;
         x = 1;
         pas = 0.1;
-        noduri = 10 * (n + 1);
+        noduri = 2 * (n + 1);
         functie = @(x)exp(2*x);
 
         resultFunctie = functie(a:pas:b);
@@ -20,7 +20,7 @@ switch numarExercitiu
         
         idx = 1;
         for i = a:pas:b
-            resultSpline(idx) = splineLine(functie, a, b, n, i);
+            resultSpline(idx) = splineLine(functie, a, b, noduri, i);
             idx = idx + 1;
         end
         
@@ -35,6 +35,7 @@ switch numarExercitiu
         n = 4;
         x = 1;
         pas = 0.1;
+        noduri = 10 * (n + 1);
         functie = @(x)exp(2*x);
         functieDerivata = @(x)2*exp(2*x);
         
@@ -43,7 +44,7 @@ switch numarExercitiu
         
         idx = 1;
         for i = a:pas:b
-            resultSpline(idx) = splinePatratic(functie, functieDerivata, a, b, n, i);
+            resultSpline(idx) = splinePatratic(functie, functieDerivata, a, b, noduri, i);
             idx = idx + 1;
         end
        
@@ -58,6 +59,7 @@ switch numarExercitiu
         n = 4;
         x = 1;
         pas = 0.1;
+        noduri = 50 * (n + 1);
         functie = @(x)exp(2*x);
         functieDerivata = @(x)2*exp(2*x);
         
@@ -66,7 +68,7 @@ switch numarExercitiu
         
         idx = 1;
         for i = a:pas:b
-            resultSpline(idx) = splineCubic(functie, functieDerivata, a, b, n, i);
+            resultSpline(idx) = splineCubic(functie, functieDerivata, a, b, noduri, i);
             idx = idx + 1;
         end
         

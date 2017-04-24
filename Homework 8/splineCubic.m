@@ -10,21 +10,25 @@ function [ y ] = splineCubic( functie, functieDerivata, a, b, n, xValue )
         x(i) = x(i - 1) + h;
     end
     
-    matriceAsociata = ones(n-1, 3) .* [1 4 1];
-    termeniLiberi = zeros(n-1,1);
+    matriceAsociata = zeros(n+1, n+1);
+    matriceAsociata(1,1) = 1;
+    matriceAsociata(end,end) = 1;
+    for i = 2:n
+        matriceAsociata(i,i-1) = 1;
+        matriceAsociata(i,i) = 4;
+        matriceAsociata(i,i+1) = 1;
+    end
+
+    termeniLiberi = zeros(n+1,1);
+    termeniLiberi(1) = functieDerivata(x(1));
+    termeniLiberi(end) = functieDerivata(x(n+1));
     for j = 2:n
-        termeniLiberi(j-1,1) = (3/h) * (functie(x(j+1)) - functie(x(j-1)));
+        termeniLiberi(j,1) = (3/h) * (functie(x(j+1)) - functie(x(j-1)));
     end
     
-    bResult = matriceAsociata.^-1*termeniLiberi;
+    b = matriceAsociata^-1*termeniLiberi;
     
     a = zeros(1,n);
-    b = zeros(1,n+1);
-    
-    b(1) = functieDerivata(x(1));
-    b(2:n) = bResult;
-    b(n+1) = functieDerivata(x(n+1));
-    
     c = zeros(1,n);
     d = zeros(1,n);
     
