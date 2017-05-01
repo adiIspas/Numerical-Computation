@@ -59,7 +59,7 @@ switch numarExercitiu
         n = 4;
         x = 1;
         pas = 0.1;
-        noduri = 50 * (n + 1);
+        noduri = 10 * (n + 1);
         functie = @(x)exp(2*x);
         functieDerivata = @(x)2*exp(2*x);
         
