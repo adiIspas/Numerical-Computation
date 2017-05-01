@@ -1,6 +1,6 @@
 % Adrian ISPAS, Grupa 343
 clear, clc
-numarExercitiu = 1;
+numarExercitiu = 3;
 
 switch numarExercitiu
     case 1

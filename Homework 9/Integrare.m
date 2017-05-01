@@ -19,8 +19,10 @@ function [ I ] = Integrare( f, a, b, m, metoda )
             
             I = (h/3) * (f(x(1)) + 4 * sum(f(x(2:2:end))) + 2 * sum(f(x(3:2:end-1))) + f(x(end)));
         case 'newton'
+            x = linspace(a, b, m);
+            h = (b - a)/m;
             
+            I = sum(h * f(x(1:end)));
     end
-
 end
 
