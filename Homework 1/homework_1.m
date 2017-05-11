@@ -4,7 +4,7 @@ clear;
 close all;
 
 % Setam parametrii initial
-numarExercitiu = 3;
+numarExercitiu = 2;
 
 switch numarExercitiu
     case 2
@@ -13,7 +13,7 @@ switch numarExercitiu
         functie_2 = @(x)x.^3-7.*x.^2+14.*x-6;
         a = 3.2;
         b = 4;
-        numarPasi = 100;
+        numarPasi = 2;
 
         % A
         x = 0:0.001:4;
