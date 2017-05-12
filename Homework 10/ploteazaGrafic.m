@@ -33,6 +33,8 @@ function [] = ploteazaGrafic( functieSolutie, t, x, numeMetoda, tip )
                 hold off;
 
                 title(['Eroare Metoda ' numeMetoda]);
+                
              saveas(gcf,['grafic_eroare_' numeMetoda '.jpg'])
+    end
 end
 
