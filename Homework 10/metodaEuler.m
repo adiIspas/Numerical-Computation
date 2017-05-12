@@ -8,10 +8,11 @@ function [t, x] = metodaEuler( functie, a, b, alfa, N )
         t(i) = t(i - 1) + h; 
     end
 
-    x(1) = alfa;
+    x = zeros(size(alfa, 1), N + 1);
+    x(:,1) = alfa;
     
     for i = 1:N
-        x(i + 1) = x(i) + h * functie(t(i),x(i));
+        x(:,i + 1) = x(:,i) + h .* functie(t(i),x(:,i));
     end
 end
 

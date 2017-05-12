@@ -20,15 +20,16 @@ function [ t, x ] = metodaTaylor( functie, derivate, a, b, alfa, N )
         t(i) = t(i - 1) + h;
     end
 
-    x(1) = alfa;
+    x = zeros(size(alfa, 1), N + 1);
+    x(:,1) = alfa;
     
     for i = 1:N
         
         suma = 0;
         for k = 1:p
-            suma = suma + ((h ^ (k - 1))/factorial(k)) * derivate{k}(t(i),x(i));
+            suma = suma + ((h ^ (k - 1))/factorial(k)) * derivate{k}(t(i),x(:,i));
         end
-        x(i + 1) = x(i) + h * suma;
+        x(:,i + 1) = x(:,i) + h * suma;
     end
 end
 
