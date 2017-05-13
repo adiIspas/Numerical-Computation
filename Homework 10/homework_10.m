@@ -44,7 +44,7 @@ switch numarExercitiu
        data
         
        [t,x] = metodaHeun(functie, a, b, alfa, N);
-       ploteazaGrafic(functieSolutie, t, x, 'Heun');
+       ploteazaGrafic(functieSolutie, t, x, 'Heun', 1);
        scrieRezultate(t, x, 'Heun');
        
     case '1f'
@@ -66,7 +66,7 @@ switch numarExercitiu
         a = 0;
         b = 3;
         
-        metoda = 'runge_kutta';
+        metoda = 'punct_central';
         switch metoda
             case 'euler'
                 [t,x] = metodaEuler(functie, a, b, alfa, N);    
